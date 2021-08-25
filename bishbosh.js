@@ -33,6 +33,7 @@ function getValue(){
             
             // Här ska det stå Bish-Bosh
             item.innerHTML = "Bosh";
+            item.className = "blue";
             bishboshlist.appendChild(item);
         }
         else{
