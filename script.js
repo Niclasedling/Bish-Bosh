@@ -1,19 +1,23 @@
-function rangeValue(range, label){
-    document.getElementById(label).innerHTML = document.getElementById(range).value
 
+
+function displayRangenum(range, label){
+    document.getElementById(label).innerHTML = document.getElementById(range).value
 }
 
-function getValue(){
+
+function calculateNum(){
     
-    var rangeNumber = document.getElementById("nummer").value;
+    var rangeNumber = document.getElementById("number").value;
     var bishNumber = document.getElementById("bish").value;
     var boshNumber = document.getElementById("bosh").value;
     var bishboshlist = document.getElementById("bish-bosh-list");
+    
+    //Raderar ifrån listan så den kan uppdateras!
     bishboshlist.innerHTML = "";
-
+    
     for (let i = 1; i <= rangeNumber; i++) {
-
-        var item = document.createElement('li');
+        
+        var item = document.createElement("li");
         
         if (i % bishNumber == 0 && i % boshNumber == 0) {
             
@@ -36,11 +40,9 @@ function getValue(){
             item.className = "blue";
             bishboshlist.appendChild(item);
         }
-        else{
+        else {
             item.innerHTML = i;
             bishboshlist.appendChild(item);
         } 
-        
-        
     }
 }
