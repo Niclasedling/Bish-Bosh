@@ -7,42 +7,45 @@ function displayRangenum(range, label){
 
 function calculateNum(){
     
-    var rangeNumber = document.getElementById("number").value;
-    var bishNumber = document.getElementById("bish").value;
-    var boshNumber = document.getElementById("bosh").value;
-    var bishboshlist = document.getElementById("bish-bosh-list");
+    var amount = document.getElementById("number").value;
+    var bishNumb = document.getElementById("bish").value;
+    var boshNumb = document.getElementById("bosh").value;
+    var unorderedList = document.getElementById("bish-bosh-list");
     
     //Raderar ifrån listan så den kan uppdateras!
-    bishboshlist.innerHTML = "";
+    unorderedList.innerHTML = "";
     
-    for (let i = 1; i <= rangeNumber; i++) {
+    for (let i = 1; i <= amount; i++) {
+        // Skapar upp listitems
+        var listItem = document.createElement("li");
         
-        var item = document.createElement("li");
-        
-        if (i % bishNumber == 0 && i % boshNumber == 0) {
+        if (i % bishNumb == 0 && i % boshNumb == 0) {
             
-            // Här ska det stå Bish-Bosh
-            item.innerHTML = "Bish-Bosh";
-            item.className = "green";
-            bishboshlist.appendChild(item);
+            // Om kravet stämmer överens kommer "Bish-Bosh" 
+            // att läggas till i innerHTML på listitem
+            listItem.className = "green";
+            unorderedList.appendChild(listItem);
         }
-        else if (i % bishNumber == 0) {
+        else if (i % bishNumb == 0) {
             
-            // Här ska det stå Bish!
-            item.innerHTML = "Bish";
-            item.className = "red";
-            bishboshlist.appendChild(item);
+            // Om kravet stämmer överens kommer "Bish" 
+            // att läggas till i innerHTML på listitem
+            listItem.innerHTML = "Bish";
+            listItem.className = "red";
+            unorderedList.appendChild(listItem);
         }
-        else if (i % boshNumber == 0) {
+        else if (i % boshNumb == 0) {
             
-            // Här ska det stå Bish-Bosh
-            item.innerHTML = "Bosh";
-            item.className = "blue";
-            bishboshlist.appendChild(item);
+            // Om kravet stämmer överens kommer "Bosh" 
+            // att läggas till i innerHTML på listitem
+            listItem.innerHTML = "Bosh";
+            listItem.className = "blue";
+            unorderedList.appendChild(listItem);
         }
         else {
-            item.innerHTML = i;
-            bishboshlist.appendChild(item);
+            // Annars kommer värdet av "i" läggar i innerHTML
+            listItem.innerHTML = i;
+            unorderedList.appendChild(listItem);
         } 
     }
 }
