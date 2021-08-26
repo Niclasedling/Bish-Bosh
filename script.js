@@ -23,6 +23,7 @@ function calculateNum(){
             
             // Om kravet stämmer överens kommer "Bish-Bosh" 
             // att läggas till i innerHTML på listitem
+            listItem.innerHTML ="Bish-Bosh";
             listItem.className = "green";
             unorderedList.appendChild(listItem);
         }
