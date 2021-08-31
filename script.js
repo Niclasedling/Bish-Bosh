@@ -3,8 +3,6 @@
 function displayRangenum(range, label){
     document.getElementById(label).innerHTML = document.getElementById(range).value
 }
-
-
 function calculateNum(){
     
     var amount = document.getElementById("number").value;
